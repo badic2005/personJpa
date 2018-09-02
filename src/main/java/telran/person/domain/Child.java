@@ -1,5 +1,7 @@
 package telran.person.domain;
 
+import lombok.Builder;
+
 import java.time.LocalDate;
 
 import javax.persistence.Entity;

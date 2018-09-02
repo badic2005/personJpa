@@ -9,9 +9,17 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import telran.person.domain.Address;
+import telran.person.domain.Child;
+import telran.person.domain.Employee;
 import telran.person.domain.Person;
 import telran.person.dto.AddressDto;
+import telran.person.dto.RandomData;
 import telran.person.service.IPerson;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Random;
 
 @RestController
 public class PersonController {
@@ -19,8 +27,8 @@ public class PersonController {
 	IPerson personService;
 	
 	@PostMapping("/person")
-	public void addPerson(@RequestBody Person person) {
-		personService.addPerson(person);
+	public boolean addPerson(@RequestBody Person person) {
+		return personService.addPerson(person);
 	}
 	
 	@GetMapping("/person/{id}")
@@ -54,4 +62,9 @@ public class PersonController {
 	}
 	
 
+	@PostMapping("/persons/random")
+	public boolean createRandomPersons(@RequestBody RandomData randomData) {
+		System.out.println(randomData);
+		return personService.createRandomPersons(randomData);
+	}
 }

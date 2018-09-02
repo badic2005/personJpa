@@ -1,7 +1,10 @@
 package telran.person.domain;
 
+import lombok.Builder;
+
 import javax.persistence.Embeddable;
 
+@Builder
 @Embeddable
 public class Address {
 	String city;

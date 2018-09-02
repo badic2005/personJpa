@@ -1,8 +1,11 @@
 package telran.person.domain;
 
+import lombok.Builder;
+
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+
 @Entity
 public class Employee extends Person {
 	String company;
